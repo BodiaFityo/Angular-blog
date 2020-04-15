@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
             ],
             "scripts": []
           },
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-blog"
+    }
+  },
+  "defaultProject": "angular-blog",
+  "cli": {
+    "analytics": false
+  }
 }

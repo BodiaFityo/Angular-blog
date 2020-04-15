@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'helpers/_fonts';
+@import './helpers/_variables';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $black;
+  background-color: $white;
+}
+

@@ -1,0 +1,32 @@
+@import "./src/helpers/variables";
+@import "./src/helpers/mixins";
+
+.card {
+
+    &__container {
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    &__header {
+        margin-bottom: 10px;
+        text-align: center;
+
+        h2 {
+            text-transform: uppercase;
+        }
+
+        span {
+            font-weight: $font-bold;
+        }
+    }
+
+    &__author {
+        margin-bottom: 10px;
+        font-weight: $font-bold;
+    }
+
+    &__btn {
+        @include btn-generator($color-accent);
+    }
+}

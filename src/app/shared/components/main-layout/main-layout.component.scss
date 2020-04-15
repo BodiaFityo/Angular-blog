@@ -1,0 +1,30 @@
+@import "./src/helpers/_variables";
+
+.nav {
+
+    &__bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-height: 40px;
+        background-color: $color-accent;
+    }
+
+    &__title {
+
+        a {
+            font-size: 21px;
+            font-weight: $font-bold;
+            text-transform: uppercase;
+            margin-left: 15px;
+            color: $black;
+            text-decoration: none;
+        }
+    }
+}
+
+.main-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 25px;
+}

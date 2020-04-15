@@ -1,0 +1,15 @@
+@import "variables";
+
+@mixin btn-generator($btn-color) {
+    padding: 10px;
+    color: $white;
+    background-color: $btn-color;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+
+    &:hover {
+        box-shadow: 0 0 10px $btn-color;
+        cursor: pointer;
+    }
+}
