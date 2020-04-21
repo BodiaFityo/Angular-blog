@@ -1,4 +1,4 @@
-@import "./src/helpers/_variables";
+@import "./src/helpers/variables";
 
 .nav {
 
@@ -7,7 +7,7 @@
         flex-direction: row;
         align-items: center;
         min-height: 40px;
-        background-color: $color-accent;
+        border-bottom: 1px solid $black;
     }
 
     &__title {
@@ -19,12 +19,16 @@
             margin-left: 15px;
             color: $black;
             text-decoration: none;
+
+            &:hover {
+                opacity: 0.5;
+            }
         }
     }
 }
 
 .main-container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1000px;
     padding: 25px;
 }

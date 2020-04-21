@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'helpers/_fonts';
 @import './helpers/_variables';
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.snow.css';
 
 * {
   box-sizing: border-box;

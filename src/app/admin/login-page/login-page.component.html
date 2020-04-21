@@ -1,1 +1,60 @@
-<p>login-page works!</p>
+<form
+    class="admin-form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+>
+    <div class="admin-form__container">
+        <h2 class="admin-form__title">Login</h2>
+        <div
+            class="field-error"
+            *ngIf="authService.error$ | async as error"
+        >
+            {{ error }}
+        </div>
+        <div
+            class="admin-form__form-control"
+            [ngClass]="{invalid: emailFieldError()}"
+        >
+            <label for="email">Email</label>
+            <input
+                id="email"
+                type="text"
+                placeholder="Email"
+                formControlName="email"
+            >
+            <div
+                class="field-error"
+                *ngIf="emailFieldError()"
+            >
+                {{ emailErrorMsg() }}
+            </div>
+        </div>
+        <div
+            class="admin-form__form-control"
+            [ngClass]="{invalid: pswFieldError()}"
+        >
+            <label for="password">Password</label>
+            <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                formControlName="password"
+            >
+            <div
+                class="field-error"
+                *ngIf="pswFieldError()"
+            >
+                {{ pswErrorMsg() }}
+            </div>
+        </div>
+        <div class="btn-wrapper">
+            <button
+                type="submit"
+                class="btn"
+                [disabled]="form.invalid || submited"
+            >
+                Submit
+            </button>
+        </div>
+    </div>
+</form>

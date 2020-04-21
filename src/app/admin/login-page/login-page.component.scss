@@ -1,0 +1,61 @@
+@import "./src/helpers/variables";
+@import "./src/helpers/mixins";
+
+.admin-form {
+
+    &__container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 25px;
+        box-shadow: 0 10px 6px -6px #777;
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: $font-bold;
+        font-size: 21px;
+    }
+
+    &__form-control {
+        display: flex;
+        flex-direction: column;
+        min-height: 78px;
+
+        input {
+            padding: 10px;
+            border: 1px solid #777;
+        }
+
+        label {
+            font-size: 14px;
+        }
+    }
+
+    .field-error {
+        color: $danger;
+        font-size: 11px;
+    }
+
+    .invalid {
+
+        input {
+            border: 1px solid $danger;
+        }
+
+        label {
+            color: $danger;
+        }
+    }
+
+    .btn-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .btn {
+            @include btn-generator($black);
+            min-width: 190px;
+            margin-top: 10px;
+        }
+    }
+}

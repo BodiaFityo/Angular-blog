@@ -1,2 +1,38 @@
-<p>admin-layout works!</p>
-<router-outlet></router-outlet>
+<nav class="admin-nav">
+    <div class="admin-nav__bar">
+        <h1>
+            <a [routerLink]="['/admin', 'dashboard']">
+                Admin Panel
+            </a>
+        </h1>
+        <ul *ngIf="authService.isAuthenticated()">
+            <li>
+                <a
+                    [routerLink]="['/admin', 'dashboard']"
+                    routerLinkActive="active"
+                >
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a
+                    [routerLink]="['/admin', 'create']"
+                    routerLinkActive="active"
+                >
+                    Create
+                </a>
+            </li>
+            <li>
+                <a
+                    href="#"
+                    (click)="logOut($event)"
+                >
+                    Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<section class="main-container">
+    <router-outlet></router-outlet>
+</section>
