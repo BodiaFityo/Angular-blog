@@ -1,0 +1,60 @@
+<form
+    class="create-form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+>
+    <div class="create-form__container">
+        <h2 class="create-form__title">Create Post</h2>
+        <div
+            class="create-form__form-control"
+            [ngClass]="{invalid: form.get('title').invalid && form.get('title').touched}"
+        >
+            <label for="title">Title</label>
+            <input
+                id="title"
+                type="text"
+                placeholder="Title"
+                formControlName="title"
+            >
+            <div
+                class="field-error"
+                *ngIf="form.get('title').invalid && form.get('title').touched"
+            >
+                Title is required
+            </div>
+        </div>
+        <div
+            class="create-form__content-text"
+        >
+            Content Text
+            <quill-editor formControlName="text"></quill-editor>
+        </div>
+        <div
+            class="create-form__form-control"
+            [ngClass]="{invalid: form.get('author').invalid && form.get('author').touched}"
+        >
+            <label for="author">Author</label>
+            <input
+                id="author"
+                type="text"
+                placeholder="Author"
+                formControlName="author"
+            >
+            <div
+                class="field-error"
+                *ngIf="form.get('author').invalid && form.get('author').touched"
+            >
+                Password is required
+            </div>
+        </div>
+        <div class="btn-wrapper">
+            <button
+                type="submit"
+                class="btn"
+                [disabled]="form.invalid"
+            >
+                Create Post
+            </button>
+        </div>
+    </div>
+</form>

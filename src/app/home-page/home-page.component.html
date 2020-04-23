@@ -1,0 +1,11 @@
+<div class="posts">
+    <div *ngIf="posts$ | async as posts; else loading">
+        <app-post
+            *ngFor="let streamPost of posts"
+            [post]="streamPost"
+        ></app-post>
+    </div>
+    <ng-template #loading>
+        Loading...
+    </ng-template>
+</div>

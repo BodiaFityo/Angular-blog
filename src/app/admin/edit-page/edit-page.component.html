@@ -1,0 +1,45 @@
+<div *ngIf="form; else loading">
+    <form
+        class="edit-form"
+        [formGroup]="form"
+        (ngSubmit)="onSave()"
+    >
+        <div class="edit-form__container">
+            <h2 class="edit-form__title">Edit Post</h2>
+            <div
+                class="edit-form__form-control"
+                [ngClass]="{invalid: form.get('title').invalid && form.get('title').touched}"
+            >
+                <label for="title">Title</label>
+                <input
+                    id="title"
+                    type="text"
+                    placeholder="Title"
+                    formControlName="title"
+                >
+                <div
+                    class="field-error"
+                    *ngIf="form.get('title').invalid && form.get('title').touched"
+                >
+                    Title is required
+                </div>
+            </div>
+            <div
+                class="edit-form__content-text"
+            >
+                Content Text
+                <quill-editor formControlName="text"></quill-editor>
+            </div>
+            <div class="btn-wrapper">
+                <button
+                    type="submit"
+                    class="btn"
+                    [disabled]="form.invalid"
+                >
+                    Save Post
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<ng-template #loading></ng-template>
