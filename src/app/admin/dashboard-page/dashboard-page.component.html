@@ -1,1 +1,38 @@
-<p>dashboard-page works!</p>
+<div *ngIf="posts.length; else loading">
+    <input
+        type="text"
+        [(ngModel)]="filter"
+        placeholder="search"
+        class="form-control"
+    >
+    <table class="table">
+        <tr class="table-head">
+            <th class="table-head__head"># Index</th>
+            <th class="table-head__head">Title</th>
+            <th class="table-head__head">Date</th>
+            <th class="table-head__head">Author</th>
+            <th class="table-head__head">Actions</th>
+        </tr>
+        <tr
+            class="table-body"
+            *ngFor="let item of posts | searchPosts: filter; let idx = index"
+        >
+            <td class="table-body__content">{{ idx + 1 }}</td>
+            <td class="table-body__content">{{ item.title }}</td>
+            <td class="table-body__content">{{ item.data | date:'medium':null: 'ua' }}</td>
+            <td class="table-body__content">{{ item.author }}</td>
+            <td class="table-body__content">
+                <a [routerLink]="['/admin', 'post', item.id, 'edit']">Open</a>
+                <button
+                    class="btn"
+                    (click)="onDelete(item.id)"
+                >
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+<ng-template #loading>
+    Loading..
+</ng-template>

@@ -1,0 +1,23 @@
+@import "./src/helpers/variables";
+@import "./src/helpers/mixins";
+
+.alert {
+
+    &__container {
+        position: fixed;
+        min-width: 250px;
+        padding: 15px;
+        right: 0;
+        top: 20%;
+    }
+}
+
+.alert-success {
+    background-color: palegreen;
+    border: 1px solid $white;
+}
+
+.alert-danger {
+    background-color: palevioletred;
+    border: 1px solid $white;
+}

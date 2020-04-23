@@ -23,4 +23,40 @@ export class PostsService {
                 })
             );
     }
+
+    getPosts(): Observable<any> {
+        return this.http.get(`${environment.fbDbUrls}/posts.json`)
+            .pipe(
+                map((response: {[key: string]: any}) => {
+                    return Object
+                        .keys(response)
+                        .map(key => ({
+                            ...response[key],
+                            id: key,
+                            date: new Date(response[key].date)
+                        }));
+                })
+            );
+    }
+
+    getPostId(id: string): Observable<any> {
+       return this.http.get(`${environment.fbDbUrls}/posts/${id}.json`)
+           .pipe(
+               map((post: Post) => {
+                   return {
+                       ...post,
+                       id,
+                       data: new Date(),
+                   };
+               })
+           );
+    }
+
+    deletePost(id: string): Observable<void> {
+       return this.http.delete<void>(`${environment.fbDbUrls}/posts/${id}.json`);
+    }
+
+    updatePost(post) {
+        return this.http.patch(`${environment.fbDbUrls}/posts/${post.id}.json`, post);
+    }
 }

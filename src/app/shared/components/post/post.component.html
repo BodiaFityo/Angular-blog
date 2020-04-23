@@ -2,16 +2,16 @@
     <div class="card__container">
 
         <div class="card__header">
-            <h2>Post Title</h2>
-            <span>15.04.20</span>
+            <h2>{{ post.title }}</h2>
+            <span>{{ post.data | date:'medium' }}</span>
         </div>
 
         <div class="card__author">
-            <span>Author: Bodia</span>
+            <span>Author: {{ post.author }}</span>
         </div>
 
         <button
-            [routerLink]="['/post', 12]"
+            [routerLink]="['/post', post.id]"
             class="card__btn"
         >
             Open
