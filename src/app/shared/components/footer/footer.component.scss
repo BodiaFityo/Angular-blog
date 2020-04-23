@@ -1,0 +1,64 @@
+@import "./src/helpers/variables";
+
+.footer {
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 0;
+        min-height: 150px;
+        background-color: $black;
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+}
+
+.about {
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+
+        h1 {
+            font-size: 21px;
+            font-weight: $font-bold;
+            color: $white;
+        }
+
+        p {
+            font-size: 14px;
+            color: $white;
+        }
+    }
+}
+
+.useful-links {
+
+    &__links {
+        display: flex;
+        flex-direction: row;
+        padding: 15px;
+        margin-right: 10px;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    &__link {
+        font-size: 14px;
+        font-weight: $font-bold;
+        text-transform: uppercase;
+        margin-left: 15px;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}

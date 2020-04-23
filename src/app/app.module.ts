@@ -12,6 +12,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthInterceptor} from './shared/auth.interceptor';
 import {registerLocaleData} from '@angular/common';
 import uaLocale from '@angular/common/locales/ru';
+import {FooterComponent} from './shared/components/footer/footer.component';
 
 registerLocaleData(uaLocale, 'ua')
 
@@ -27,7 +28,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
         MainLayoutComponent,
         HomePageComponent,
         PostPageComponent,
-        PostComponent
+        PostComponent,
+        FooterComponent,
     ],
     imports: [
         BrowserModule,

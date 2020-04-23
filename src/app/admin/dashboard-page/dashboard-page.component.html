@@ -11,7 +11,7 @@
             <th class="table-head__head">Title</th>
             <th class="table-head__head">Date</th>
             <th class="table-head__head">Author</th>
-            <th class="table-head__head">Actions</th>
+            <th class="table-head__head actions-head">Actions</th>
         </tr>
         <tr
             class="table-body"
@@ -21,8 +21,13 @@
             <td class="table-body__content">{{ item.title }}</td>
             <td class="table-body__content">{{ item.data | date:'medium':null: 'ua' }}</td>
             <td class="table-body__content">{{ item.author }}</td>
-            <td class="table-body__content">
-                <a [routerLink]="['/admin', 'post', item.id, 'edit']">Open</a>
+            <td class="table-body__content actions">
+                <a
+                    class="link"
+                    [routerLink]="['/admin', 'post', item.id, 'edit']"
+                >
+                    Edit
+                </a>
                 <button
                     class="btn"
                     (click)="onDelete(item.id)"
