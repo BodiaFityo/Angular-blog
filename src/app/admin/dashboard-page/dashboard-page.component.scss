@@ -4,6 +4,7 @@
 .table {
     border-collapse: collapse;
     width: 100%;
+    background-color: $white;
 }
 
 .form-control {
@@ -27,13 +28,30 @@
     &__content {
         font-size: 14px;
         padding: 10px;
-        margin: 10px;
         text-align: left;
     }
 }
 
+.actions-head {
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.link {
+    @include btn-generator(#a7c996);
+    text-decoration: none;
+    text-transform: capitalize;
+    border-radius: 50px;
+}
+
 .btn {
-    @include btn-generator($black);
+    @include btn-generator(#ff1a1a);
     text-transform: capitalize;
     margin-left: 5px;
     border-radius: 50px;

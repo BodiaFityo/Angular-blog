@@ -6,31 +6,34 @@
                 Admin Panel
             </a>
         </h1>
-        <ul *ngIf="authService.isAuthenticated()">
-            <li>
-                <a
-                    [routerLink]="['/admin', 'dashboard']"
-                    routerLinkActive="active"
-                >
-                    Dashboard
-                </a>
-            </li>
-            <li>
-                <a
-                    [routerLink]="['/admin', 'create']"
-                    routerLinkActive="active"
-                >
-                    Create
-                </a>
-            </li>
-            <li>
-                <a
-                    href="#"
-                    (click)="logOut($event)"
-                >
-                    Logout</a>
-            </li>
-        </ul>
+        <div class="link-wrapper">
+            <a [routerLink]="['/']">Blog</a>
+            <ul *ngIf="authService.isAuthenticated()">
+                <li>
+                    <a
+                        [routerLink]="['/admin', 'dashboard']"
+                        routerLinkActive="active"
+                    >
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a
+                        [routerLink]="['/admin', 'create']"
+                        routerLinkActive="active"
+                    >
+                        Create
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                        (click)="logOut($event)"
+                    >
+                        Logout</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
